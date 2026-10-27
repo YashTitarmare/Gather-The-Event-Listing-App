@@ -1,12 +1,11 @@
-import { headers } from 'next/headers';
 import { getEvents, citiesOf } from '@/lib/events';
 import { CATEGORIES, slugify } from '@/lib/format';
+
+const base = 'https://gather-the-event-listing-app.vercel.app/';
+
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap() {
-  const h = headers();
-  const host = h.get('x-forwarded-host') || h.get('host');
-  const base = `${host.startsWith('localhost') ? 'http' : 'https'}://${host}`;
   const events = await getEvents();
   const now = new Date();
   return [
