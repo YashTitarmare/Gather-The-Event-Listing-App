@@ -27,7 +27,9 @@ export default async function Home() {
 
       <section className="wrap sec">
         <div className="head"><h2>Upcoming events</h2><Link href="/events" className="btn ghost sm">Explore all events</Link></div>
+        
         {events.length ? <div className="grid">{events.slice(0, 6).map((e) => <EventCard key={e.id} e={e} />)}</div>
+        
           : <p className="empty">No upcoming events yet. Add a row with status “published” in the Google Sheet.</p>}
       </section>
 
