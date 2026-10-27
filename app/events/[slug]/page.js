@@ -4,7 +4,6 @@ import EventCard from '@/components/EventCard';
 import ShareButtons from '@/components/ShareButtons';
 import { getEvents, related, isPast } from '@/lib/events';
 import { SITE_URL, fmt, contactLink, slugify } from '@/lib/format';
-
 export const revalidate = 600;
 export const dynamicParams = true;
 
